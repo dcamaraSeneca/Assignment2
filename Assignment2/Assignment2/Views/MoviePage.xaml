@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assignment2.Views.MoviePage"
+             Title="My Watchlist App">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" >
+            <StackLayout Orientation="Horizontal" BackgroundColor="Black" Padding="5,5,0,5">
+                
+                <StackLayout Orientation="Vertical">
+                    <Label x:Name="title"  TextColor="White" FontSize="Large"  FontAttributes="Bold"></Label>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="year"  TextColor="White" FontSize="Caption" ></Label>
+                        <Label x:Name="rated" TextColor="White" FontSize="Caption" ></Label>
+                        <Label x:Name="genre"  TextColor="White" FontSize="Caption" ></Label>
+                    </StackLayout>
+                </StackLayout>
+                <Button Text="X"  Clicked="Button_Clicked" TextColor="White" FontSize="Large" FontAttributes="Bold" BackgroundColor="Black" HorizontalOptions="EndAndExpand"></Button>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="5,10,5,0" Padding="5,5,5,5" BackgroundColor="White">
+                <Image x:Name="poster"></Image>
+                <StackLayout Orientation="Vertical" >
+                    <Label x:Name="director" TextColor="Black" FontSize="Medium" ></Label>
+                    <Label x:Name="writer"  TextColor="Black" FontSize="Medium" ></Label>
+                    <Label x:Name="actors"  TextColor="Black" FontSize="Medium" ></Label>
+
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Margin="5,5,5,5" Padding="5,0,5,5" >
+                <Label Text="Plot" FontSize="Large" FontAttributes="Bold" TextColor="Black"></Label>
+                <Label x:Name="plot"  TextColor="Black"  ></Label>
+            </StackLayout>
+            <Button x:Name="removeButton" Text="Remove From Watch List" VerticalOptions="EndAndExpand" Clicked="Remove_Clicked" BackgroundColor="Red" TextColor="White" CornerRadius="10" Margin="5,5,5,5" FontAttributes="Bold" IsVisible="false"></Button>
+            <Button x:Name="addButton" Text="Add To Watch List" VerticalOptions="EndAndExpand" Clicked="Add_Clicked" BackgroundColor="Blue" TextColor="White" CornerRadius="10" Margin="5,5,5,5" FontAttributes="Bold"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

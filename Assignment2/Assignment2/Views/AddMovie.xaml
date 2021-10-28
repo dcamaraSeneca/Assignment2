@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assignment2.Views.AddMovie"
+             Title="My Watchlist App">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" Margin="5,10,5,10">
+                <!--<Entry x:Name="query" Placeholder="Enter Movie" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"></Entry>
+                <Button Text="Search" Clicked="Button_Clicked" HorizontalOptions="End" Background="Blue" TextColor="White" CornerRadius="10"></Button>-->
+                <SearchBar x:Name="query" Placeholder="Enter Movie" HorizontalOptions="FillAndExpand" SearchButtonPressed="Button_Clicked"></SearchBar>
+            </StackLayout>
+            <Label x:Name="myLabel" Text="No Search Results!" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" IsVisible="false" ></Label>
+            <StackLayout Orientation="Vertical" >
+                <ListView x:Name="movieList" RowHeight="110" ItemSelected="movieList_ItemSelected" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout BackgroundColor="#eee" Orientation="Vertical" Margin="0,0,5,0">
+                                    <StackLayout Orientation="Horizontal" >
+                                        <Image Source="{Binding Poster}" WidthRequest="120"/>
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text="{Binding Title}" FontSize="Large"  FontAttributes="Bold"/>
+                                            <Label Text="{Binding Year}"  FontSize="Medium" TextColor="Red" />
+                                            <Label Text="{Binding Type}"  TextColor="Black" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="5,5,5,10">
+                <Grid RowDefinitions="auto,auto,auto">
+                    <Button x:Name="lt" Text="&lt;" FontSize="Large" FontAttributes="Bold" TextColor="Black" Clicked="lt_Clicked" BackgroundColor="Transparent" CornerRadius="10" IsVisible="false" Grid.Column="0" ></Button>
+                    <Label x:Name="page" Text="Page" FontSize="Large" FontAttributes="Bold" TextColor="Black" VerticalTextAlignment="Center" IsVisible="false" Grid.Column="1"></Label>
+                    <Button x:Name="gt" Text="&gt;" FontSize="Large" FontAttributes="Bold" TextColor="Black" Clicked="gt_Clicked" BackgroundColor="Transparent" CornerRadius="10" IsVisible="false" Grid.Column="2"></Button>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
